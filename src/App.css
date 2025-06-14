@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: 10vh 80vh 10vh; /* total: 100vh */
+  grid-template-areas:
+    "navbar navbar"
+    "sidebar productCard"
+    "footer footer";
+  height: 100vh;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #fda7df;
+  height: 80vh;
+}
+
+/* NAVBAR */
+.navbar {
+  grid-area: navbar;
+  background-color: #d980fa;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoNav {
+  width: 80px;
+  height: 60px;
+  padding: 1.3rem;
+}
+.product-list {
+  grid-area: productCard;
+  background-color: #9980fa;
+  height: 80vh;
+  overflow-y: auto;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #d980fa;
+  height: 10vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
