@@ -1,13 +1,14 @@
-//syntax arrow function
+import navLogo from "/public/navLogo.png";
+
 const Navbar = () => {
   return (
-    <nav className="navbar">
-      <div className="logo-title">
-        <img src="/navLogo.png" alt="Logo do site" className="logoNav" />
-        <h2>Ecommerce-admin</h2>
-        <button className="searchBtn">Search</button>
+    <header className="navbar">
+      <img src={navLogo} alt="Logo" className="logoNav" />
+      <div className="navbar-center">
+        <h1 className="navbar-title">E-commerce Admin</h1>
+        <input type="text" placeholder="Search..." className="search-input" />
       </div>
-    </nav>
+    </header>
   );
 };
 
