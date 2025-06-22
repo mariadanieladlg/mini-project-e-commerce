@@ -26,6 +26,9 @@ body {
   display: flex;
   flex-direction: column;
   border-right: 1px solid #dcd6f7;
+  overflow-y: auto;
+  max-height: 80vh;
+
 }
 
 .sidebar-title {
@@ -72,11 +75,11 @@ body {
   background: linear-gradient(to right, #f8e9f0, #e0c3fc);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding: 1rem 2rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   border-radius: 0 0 16px 16px;
-  gap: 2rem;
+  width: 100%;
 }
 
 .logoNav {
@@ -84,11 +87,16 @@ body {
   height: auto;
 }
 
-.navbar-center {
+.navbar-left {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  margin: 0 auto; /* 💡 Este empuja el contenido al centro */
+  gap: 1rem;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .navbar-title {
@@ -106,6 +114,20 @@ body {
   font-size: 0.9rem;
   background-color: #fff;
   max-width: 200px;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 1rem;
+  padding: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
 }
 
 /* PRODUCT LIST */
