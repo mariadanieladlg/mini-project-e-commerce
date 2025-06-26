@@ -1,46 +1,88 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 function ProfilePage() {
-  const userProfile = {
-    image: "https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg",
-    name: "Joshua Danielson ",
-    email: "Joshua Danielson@example.com",
+  const navigate = useNavigate();
+  const [isEditing, setIsEditing] = useState(false);
+
+  const defaultProfile = {
+    image:
+      "https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg",
+    name: "Joshua Danielson",
+    email: "JoshuaDanielson@example.com",
+  };
+
+  const [profile, setProfile] = useState(() => {
+    const stored = localStorage.getItem("userProfile");
+    return stored ? JSON.parse(stored) : defaultProfile;
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setProfile((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSave = () => {
+    localStorage.setItem("userProfile", JSON.stringify(profile));
+    console.log("Profile saved to localStorage:", profile);
+    setIsEditing(false);
   };
 
   return (
-    <div>
+    <div className="profile-container">
       <h1>User Page</h1>
-      <div>
-        {userProfile && (
-          <>
-            <img
-              src={userProfile.image}
-              alt="profile-photo"
-                style={{
-                  width: "80px",
-                  height: "80px",
-                  borderRadius: "100%",
-                  objectFit: "cover",
-                  border: "2px  #d1d5db"
-                  }}
-            />
-            <h1 style={{fontSize:"20px"}}>
-              {userProfile.name}
-            </h1>
 
-            <div>
-              <p>
-                <strong>Email:</strong> {userProfile.email}
-              </p>
-            </div>
+      <div className="profile-card">
+        <img src={profile.image} alt="profile" className="profile-img" />
+
+        {isEditing ? (
+          <div className="edit-fields">
+            <label>
+              Name:
+              <input
+                type="text"
+                name="name"
+                value={profile.name}
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+              Email:
+              <input
+                type="email"
+                name="email"
+                value={profile.email}
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+              Image URL:
+              <input
+                type="text"
+                name="image"
+                value={profile.image}
+                onChange={handleChange}
+              />
+            </label>
+            <button onClick={handleSave} className="profile-btn">
+              Save
+            </button>
+          </div>
+        ) : (
+          <>
+            <h2>{profile.name}</h2>
+            <p>
+              <strong>Email:</strong> {profile.email}
+            </p>
+            <button onClick={() => setIsEditing(true)} className="profile-btn">
+              Edit Profile
+            </button>
           </>
         )}
 
-        {/* Back button */}        
-       <Link to="/" className="button">
-        Back
-      </Link>
-        
+        <button onClick={() => navigate(-1)} className="profile-btn">
+          Back
+        </button>
       </div>
     </div>
   );
