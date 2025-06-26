@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import products from "../assets/products.json";
+import { Link } from "react-router-dom";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -17,7 +18,12 @@ export default function ProductDetails() {
       <p><strong>Description:</strong> {product.description}</p>
       <p><strong>Delivery Time:</strong> {product.shippingInformation}</p>
        <p><strong>Availability:</strong> {product.availabilityStatus}</p>
-
+       
+         {/* Back button */}  
+      <Link to="/" className="button">
+        Back
+      </Link>
+     
     </div>
   );
 }
