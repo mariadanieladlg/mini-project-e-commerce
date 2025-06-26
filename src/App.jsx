@@ -5,10 +5,15 @@ import "./App.css";
 import Navbar from "./componentes/Navbar";
 import Sidebar from "./componentes/Sidebar";
 import ProductList from "./componentes/ProductList"; 
+import ProductDetails from "./Pages/ProductDetails";
+
+
+ 
 import Footer from "./componentes/Footer";
 
 import About from "./Pages/About";
 import Profile from "./Pages/ProfilePage";
+
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -18,17 +23,15 @@ function App() {
       <div className="navbar">
         <Navbar />
       </div>
-
       <div className="sidebar">
         <Sidebar setSelectedCategory={setSelectedCategory} />
       </div>
 
        <div className="product-list">
         <Routes>
-          <Route
-            path="/"
-            element={<ProductList selectedCategory={selectedCategory} />}
+          <Route path="/" element={<ProductList selectedCategory={selectedCategory} />}
           />
+          <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/about" element={<About />} />
         </Routes>
