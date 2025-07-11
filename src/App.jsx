@@ -6,6 +6,7 @@ import Navbar from "./componentes/Navbar";
 import Sidebar from "./componentes/Sidebar";
 import ProductList from "./componentes/ProductList"; 
 import ProductDetails from "./Pages/ProductDetails";
+import NotFound from "./Pages/NotFound";
 
 
  
@@ -34,6 +35,7 @@ function App() {
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
 
