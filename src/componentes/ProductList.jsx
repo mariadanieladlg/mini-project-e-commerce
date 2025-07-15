@@ -1,7 +1,6 @@
-import products from "../assets/products.json";
 import ProductCard from "./ProductCard";
 
-export default function ProductList({ selectedCategory }) {
+export default function ProductList({ selectedCategory, products }) {
   const filteredProducts = selectedCategory
     ? products.filter((item) => item.category === selectedCategory)
     : products;

@@ -95,7 +95,7 @@ body {
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .navbar-title {
@@ -129,18 +129,24 @@ body {
   font-weight: 500;
 }
 
-.button {
+/* Shared buttons */
+.button,
+.create-btn {
+  background-color: #16a34a;
   color: white;
-  background-color: #e1caf6;
-  padding: 0.2rem 0.7rem;
-  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
   text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+  border: none;
   display: inline-block;
-  transition: background-color 0.3s ease-in-out;
 }
 
-.button:hover {
-  background-color: #16a34a;
+.button:hover,
+.create-btn:hover {
+  background-color: #12833a;
 }
 
 /* PRODUCT LIST */
@@ -190,7 +196,7 @@ body {
   color: #4caf50;
 }
 
-/*Product Details*/
+/* Product Details */
 .quantity-controls {
   margin: 1.5rem 0;
 }
