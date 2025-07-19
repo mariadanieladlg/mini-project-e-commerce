@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 const About = () => {
@@ -6,9 +5,11 @@ const About = () => {
     <>
       <h2>About This Project</h2>
       <p>
-        This is a simple e-commerce admin panel, created as a mini-project during a web development bootcamp. It's designed for basic store management.
+        This is a simple e-commerce admin panel, created as a mini-project
+        during a web development bootcamp. It's designed for basic store
+        management.
       </p>
-      <Link to="/" className="button">
+      <Link to="/" className="profile-btn">
         Back
       </Link>
     </>

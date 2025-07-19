@@ -114,7 +114,7 @@ export default function ProductDetails({ products, setProducts }) {
       </div>
 
       <div className="back-button">
-        <Link to="/" className="button">
+        <Link to="/" className="profile-btn">
           Back
         </Link>
       </div>

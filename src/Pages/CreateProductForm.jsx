@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function CreateProductForm({ addProduct }) {
   const [formData, setFormData] = useState({
@@ -81,6 +82,10 @@ function CreateProductForm({ addProduct }) {
         <button type="submit" className="profile-btn">
           Add Product
         </button>
+
+        <Link to="/" className="profile-btn">
+          Back
+        </Link>
       </form>
     </div>
   );

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function ProfilePage() {
   const navigate = useNavigate();
@@ -80,9 +81,9 @@ function ProfilePage() {
           </>
         )}
 
-        <button onClick={() => navigate(-1)} className="profile-btn">
+        <Link to="/" className="profile-btn">
           Back
-        </button>
+        </Link>
       </div>
     </div>
   );

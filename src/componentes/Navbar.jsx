@@ -10,7 +10,6 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-right">
-        <input type="text" placeholder="Search..." className="search-input" />
         <ul className="navbar-links">
           <li>
             <Link className="link" to="/">
